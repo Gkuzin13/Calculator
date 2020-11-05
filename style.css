@@ -20,29 +20,28 @@ header {
     font-weight: 100;
     text-align: center;
     padding-top: 0.5em;
-    height: 2.5em;
+    height: 3em;
 }
 
-.center {
+.center-display {
     display: flex;
     justify-content: center;
 }
-
 
 .display-ctn {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
     text-align: right;
-    width: 27em;
+    width: 25em;
     height: 6em;
-    padding: 0 1em 0.4em 1em;
+    padding: 0 1em 0.5em 1em;
     background-color: white;
 }
 
 #display {
     font-size: 2.5em;
-    font-weight: 800;
+    font-weight: bolder;
 }
 
 #display-top {
@@ -50,27 +49,27 @@ header {
     color: rgb(146, 146, 146);
 }
 
+.calc-center {
+    display: flex;
+    justify-content: center;
+}
 
 #calc-ctn {
     display: grid;
     align-content: center;
     align-items: center;
+    text-align: center;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 0em;
-    grid-row-gap: 0em;
-    font-size: 1.8em;
-    font-weight: 400;
-    width: 15em;
-    height: auto;
-    margin: 0 auto;
+    width: 25rem;
     background-color: #457fca41;
     color: white;
 }
 
 .nums {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
+    font-size: 1.6em;
     align-self: stretch;
     border: 0.5px rgb(255, 255, 255) solid;
     transition: 0.1s;
@@ -82,7 +81,8 @@ header {
 
 .clear {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
+    font-size: 1.6em;
     align-self: stretch;
     border: 0.5px rgb(255, 255, 255) solid;
     transition: 0.1s;
@@ -104,11 +104,10 @@ header {
     box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
     -webkit-box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
     -moz-box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
-    
 }
 
 .clear:active {
-    padding: 1em;
+    font-weight: bold;
 }
 
 .nums:hover {
@@ -120,13 +119,14 @@ header {
 }
 
 .nums:active {
-    padding: 1em;
+    font-weight: bold;
 }
 
 .operators {
     text-align: center;
-    padding: 2rem;
     align-self: stretch;
+    padding: 1.5rem;
+    font-size: 1.6em;
     background-color: #5c93da57;
     border: 0.5px rgb(255, 255, 255) solid;
     transition: 0.2s;
@@ -145,12 +145,13 @@ header {
 }
 
 .operators:active {
-    padding: 1em;
+    font-weight: bold;
 }
 
 .operate-btn {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
+    font-size: 1.6em;
     align-self: stretch;
     background-color:#7788a083;
     border: 0.5px rgb(255, 255, 255) solid;
@@ -170,5 +171,5 @@ header {
 }
 
 .operate-btn:active {
-    padding: 1em;
+    font-weight: bold;
 }

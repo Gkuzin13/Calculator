@@ -27,7 +27,8 @@ display.textContent = [0];
 
 // Grabs the number buttons 
 nums.forEach(function(nums) {
-    nums.addEventListener('click', function() { 
+    nums.addEventListener('click', function() {
+        
         // Limits maximum number of digits  
         if(firstNumber.length > 15) {
             return;
@@ -39,11 +40,12 @@ nums.forEach(function(nums) {
         // Concatenates numbers and stores in value
         firstNumber += number;
 
+        
         // Prevents numbers from concatenating on display
         if(currentOperator != []) {
             display.textContent = [];
         };
-
+        
         // Concatenates numbers on main display
         display.textContent += [`${firstNumber}`];
 
@@ -56,7 +58,6 @@ operators.forEach(function(operators) {
     operators.addEventListener('click', function() {
         // Stores the value from HTML in operator var
         let operator = operators.getAttribute('value');
- 
         currentOperator = operator;
 
         // Displays last value before operating
@@ -85,6 +86,8 @@ operate.addEventListener('click', e => {
 
         secondNumber = [];
 
+        lastResult = [];
+
         return;
     };
 
@@ -111,7 +114,7 @@ operate.addEventListener('click', e => {
     topDisplay.textContent = `${secondNumber} ${currentOperator} ${firstNumber} =  `;
 
     // Displays the result of the calculation
-    display.textContent = [`${lastResult}`];
+    display.textContent = [`${lastResult}`.slice(0, 16)];
 
     // Stores last reuslt of the calculation to perform further operations
     firstNumber = lastResult;

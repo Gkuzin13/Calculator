@@ -8,19 +8,24 @@
     padding: 0;
 }
 
+a:visited {
+    color: white;
+}
+
 body, html {
-    background-image: linear-gradient( 91.3deg,  rgba(135,174,220,1) 1.5%, rgba(255,255,255,1) 100.3% );
+    background-image: radial-gradient( circle 506px at 50.6% 16.5%,  rgb(225, 245, 242) 5.5%, rgba(154,192,206,1) 100.2% );
     font-family: 'Open Sans', sans-serif;
     height: 100%;
     width: 100%;
 }
 
 header {
-    font-size: 3em;
-    font-weight: 100;
+    font-size: 2em;
+    font-weight: bold;
     text-align: center;
-    padding-top: 0.5em;
-    height: 3em;
+    padding-top: 1em;
+    height: 5em;
+    color: rgb(255, 255, 255);
 }
 
 .center-display {
@@ -36,7 +41,7 @@ header {
     width: 25em;
     height: 6em;
     padding: 0 1em 0.5em 1em;
-    background-color: white;
+    background-color:  rgba(248, 248, 248, 0.781);
 }
 
 #display {
@@ -62,21 +67,34 @@ header {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     width: 25rem;
-    background-color: #457fca41;
-    color: white;
+    background-color: rgb(245, 253, 255);
+    color: black;
+    margin-bottom: 2em;
 }
 
 .nums {
     text-align: center;
-    padding: 1.5rem;
+    padding: 1.6rem;
     font-size: 1.6em;
     align-self: stretch;
-    border: 0.5px rgb(255, 255, 255) solid;
+    border: 0.5px rgb(224, 224, 224) solid;
     transition: 0.1s;
     -webkit-transition: 0.1s;
     -moz-transition: 0.1s;
     -ms-transition: 0.1s;
     -o-transition: 0.1s;
+}
+
+.nums:hover {
+    cursor: pointer;
+    background-color: rgba(193, 201, 204, 0.603);
+    box-shadow: -1px 1px 8px 0px rgba(212, 212, 212, 0.48);
+    -webkit-box-shadow: -1px 1px 8px 0px rgba(190, 190, 190, 0.48);
+    -moz-box-shadow: -1px 1px 8px 0px rgba(175, 174, 174, 0.48);
+}
+
+.nums:active {
+    font-size: 1.5em;
 }
 
 .clear {
@@ -84,7 +102,7 @@ header {
     padding: 1.5rem;
     font-size: 1.6em;
     align-self: stretch;
-    border: 0.5px rgb(255, 255, 255) solid;
+    border: 0.5px rgb(221, 221, 221) solid;
     transition: 0.1s;
     -webkit-transition: 0.1s;
     -moz-transition: 0.1s;
@@ -93,42 +111,30 @@ header {
 }
 
 .clear {
-    border: 0.5px rgb(255, 255, 255) solid;
+    border: 0.5px rgb(221, 221, 221) solid;
     align-self: stretch;
-    background-color: #7788a083;
+    background-color:rgb(199, 199, 199);
 }
 
 .clear:hover {
     cursor: pointer;
-    background-color: #d49254;
+    background-color: #d89c63;
     box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
     -webkit-box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
     -moz-box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
 }
 
 .clear:active {
-    font-weight: bold;
-}
-
-.nums:hover {
-    cursor: pointer;
-    background-color: #457fca83;
-    box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
-    -webkit-box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
-    -moz-box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
-}
-
-.nums:active {
-    font-weight: bold;
+    font-size: 1.5em;
 }
 
 .operators {
     text-align: center;
     align-self: stretch;
     padding: 1.5rem;
-    font-size: 1.6em;
-    background-color: #5c93da57;
-    border: 0.5px rgb(255, 255, 255) solid;
+    font-size: 1.8em;
+    background-color: rgba(154, 192, 206, 0.801);
+    border: 0.5px rgb(221, 221, 221) solid;
     transition: 0.2s;
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
@@ -138,23 +144,23 @@ header {
 
 .operators:hover {
     cursor: pointer;
-    background-color: #457fca83;
+    background-color: rgb(164, 199, 214);
     box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
     -webkit-box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
     -moz-box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
 }
 
 .operators:active {
-    font-weight: bold;
+    font-size: 1.5em;
 }
 
 .operate-btn {
     text-align: center;
     padding: 1.5rem;
-    font-size: 1.6em;
+    font-size: 1.8em;
     align-self: stretch;
-    background-color:#7788a083;
-    border: 0.5px rgb(255, 255, 255) solid;
+    background-color:rgb(199, 199, 199);
+    border: 0.5px rgb(221, 221, 221) solid;
     transition: 0.2s;
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
@@ -164,12 +170,29 @@ header {
 
 .operate-btn:hover {
     cursor: pointer;
-    background-color: #2a2a2b86;
+    background-color: rgba(172, 172, 172, 0.801);
     box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
     -webkit-box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
     -moz-box-shadow: -1px 1px 8px 0px rgba(141,141,141,0.48);
 }
 
 .operate-btn:active {
+    font-size: 1.5em;
+}
+
+footer {
+    font-size: 1.2em;
+    margin-top: 4em;
+    color: white;
+    text-align: center;
+}
+
+.git-link {
     font-weight: bold;
+}
+
+.git-img {
+    width: 1em;
+    height: auto;
+    margin: -0.1em 0.3em;
 }

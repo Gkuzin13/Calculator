@@ -8,7 +8,7 @@ Fully functional but will add more features/fix bugs.
 ## Tech/framework used
 Built with vanilla JavaScript
 
-## Link to app
+## Link to the app
 https://gkuzin13.github.io/Calculator/
 
 

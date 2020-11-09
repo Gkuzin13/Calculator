@@ -79,7 +79,7 @@ nums.forEach(function(nums) {
         
         numberSelected = true;
 
-        activeOperator = false;
+        operationRun = false;
 
         console.log(firstNumber, currentOperator, secondNumber, result);
     });
@@ -88,45 +88,41 @@ nums.forEach(function(nums) {
 // Grabs the operator buttons
 operators.forEach(function(operators) {
     operators.addEventListener('click', (e) => {
-        activeOperator = true;
-
         // Stores the value from HTML in operator var
         let operator = operators.getAttribute('value');
+
+        if(firstNumber != '' && secondNumber != '' && operationRun === false) {
+
+            calculate();
+
+            firstNumber = result;
+
+            secondNumber = [];
+        };
+
         currentOperator = operator;
-        
+
         // Stores result in first number to make further calculations
         if(operationRun === true) {
             firstNumber = result;
         };
-        // Displays last value before operating
-        topDisplay.textContent = [`${firstNumber} ${currentOperator} `]
+        
+        topDisplay.textContent = [`${firstNumber}`];
+
+        topDisplay.textContent += [` ${currentOperator} `];
+
+        activeOperator = true;
+
+        numberSelected = false;
+
+        operationRun = false;
 
         console.log(firstNumber, currentOperator, secondNumber, result);
     });
 });
 
-// Grabs the equals button and performs calculation
-operate.addEventListener('click', (e) => {
-    if(numberSelected === false) {
-        return;
-    };
+function calculate() {
 
-    // Shows an error message when a number is divided by zero
-    if((currentOperator === '÷') && (firstNumber == 0)) {
-        display.style.fontSize = '2.2rem';
-        display.style.paddingBottom = '0.2em';
-        
-        display.textContent = ['Cannot divide by zero'];
-
-        firstNumber = [];
-
-        secondNumber = [];
-
-        result = [];
-
-        return;
-    };
-    
     // Calculates according to chosen operator
     switch(currentOperator) {
         case '+':
@@ -147,6 +143,34 @@ operate.addEventListener('click', (e) => {
             break;  
     };
 
+    // Displays the result of the calculation
+    display.textContent = [`${result}`.slice(0, 16)];
+};
+
+// Grabs the equals button and performs calculation
+operate.addEventListener('click', e => {
+    if(numberSelected === false) {
+        return;
+    };
+
+    // Shows an error message when a number is divided by zero
+    if((currentOperator === '÷') && (firstNumber == 0)) {
+        display.style.fontSize = '2.2rem';
+        display.style.paddingBottom = '0.2em';
+        
+        display.textContent = ['Cannot divide by zero'];
+
+        firstNumber = [];
+
+        secondNumber = [];
+
+        result = [];
+
+        return;
+    };
+
+    calculate();
+
     // Displays last performed operation on top display
     topDisplay.textContent = [`${secondNumber} ${currentOperator} ${firstNumber} =  `.slice(0, 35)];
     
@@ -155,10 +179,8 @@ operate.addEventListener('click', (e) => {
     
     operationRun = true;
 
-    activeOperator = false;
-    
     // Stores the result in second number to perform same calculation again until operator chosen
-    if(activeOperator === false) {
+    if(activeOperator === true) {
         secondNumber = result;
     };
 

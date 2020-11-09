@@ -6,7 +6,7 @@ This is a standart Calcultor app i made going through The Odin Prjoect https://w
 Fully functional but will add more features/fix bugs.
 
 ## Tech/framework used
-Built with vanilla Javascript
+Built with vanilla JavaScript
 
 ## Link to app
 https://gkuzin13.github.io/Calculator/

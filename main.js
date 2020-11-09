@@ -58,7 +58,7 @@ nums.forEach(function(nums) {
         };
         
         // 
-        if(activeOperator === true) {
+        if(activeOperator === true && firstNumber !== '') {
             secondNumber = firstNumber;
             firstNumber = [];  
         };
@@ -78,6 +78,8 @@ nums.forEach(function(nums) {
         display.textContent += [firstNumber];
         
         numberSelected = true;
+
+        activeOperator = false;
 
         operationRun = false;
 
@@ -180,7 +182,7 @@ operate.addEventListener('click', e => {
     operationRun = true;
 
     // Stores the result in second number to perform same calculation again until operator chosen
-    if(activeOperator === true) {
+    if(numberSelected === true) {
         secondNumber = result;
     };
 

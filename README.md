@@ -1,5 +1,17 @@
 # Calculator App
 
-05/11/20 1:00
+This is a standart Calcultor app i made going through The Odin Prjoect https://www.theodinproject.com/lessons/calculator
 
-Finally got it to work
+## Build status
+Fully functional but will add more features/fix bugs.
+
+## Tech/framework used
+Built with vanilla Javascript
+
+@ https://github.com/Gkuzin13
+
+
+
+
+
+
